@@ -1,0 +1,21 @@
+{
+  "name": "date-easter",
+  "version": "0.1.0",
+  "description": "Calculates Easter for a given year",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/commenthol/date-easter.git"
+  },
+  "keywords": [
+
+  ],
+  "author": "commenthol",
+  "license": "MIT"
+}

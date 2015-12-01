@@ -1,0 +1,5 @@
+/node_modules
+/attic
+/tmp
+*.log
+*.tgz

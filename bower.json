@@ -1,0 +1,31 @@
+{
+  "name": "date-easter",
+  "version": "0.1.0",
+  "description": "Calculates Easter for a given year",
+  "main": "index.js",
+  "authors": [
+    "commenthol"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/commenthol/dates-easter.git"
+  },
+  "homepage": "https://github.com/commenthol/dates-easter",
+  "moduleType": [
+    "amd",
+    "node",
+    "globals"
+  ],
+  "keywords": [
+    "easter"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tmp",
+    "*.tgz"
+  ]
+}

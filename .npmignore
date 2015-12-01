@@ -1,0 +1,13 @@
+.*
+/attic
+/assets
+/build
+/tmp
+/src
+*.tgz
+*.sh
+*.log
+bower.json
+component.json
+gulpfile.js
+vorwahlen-min.js

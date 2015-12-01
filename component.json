@@ -1,0 +1,14 @@
+{
+  "name": "date-easter",
+  "version": "0.1.0",
+  "description": "Calculates Easter for a given year",
+  "repo": "commenthol/dates-easter",
+  "keywords": [
+    "easter"
+  ],
+  "scripts": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "license": "MIT"
+}
