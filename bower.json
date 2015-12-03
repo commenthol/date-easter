@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git://github.com/commenthol/dates-easter.git"
   },
-  "homepage": "https://github.com/commenthol/dates-easter",
+  "homepage": "https://github.com/commenthol/date-easter",
   "moduleType": [
     "amd",
     "node",

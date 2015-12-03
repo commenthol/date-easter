@@ -1,6 +1,6 @@
 {
   "name": "date-easter",
-  "version": "0.1.0",
+  "version": "0.2.0-0",
   "description": "Calculates Easter for a given year",
   "main": "index.js",
   "directories": {
@@ -14,7 +14,7 @@
     "url": "https://github.com/commenthol/date-easter.git"
   },
   "keywords": [
-
+    "easter"
   ],
   "author": "commenthol",
   "license": "MIT"

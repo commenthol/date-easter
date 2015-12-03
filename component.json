@@ -2,7 +2,7 @@
   "name": "date-easter",
   "version": "0.1.0",
   "description": "Calculates Easter for a given year",
-  "repo": "commenthol/dates-easter",
+  "repo": "commenthol/date-easter",
   "keywords": [
     "easter"
   ],
