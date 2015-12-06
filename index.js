@@ -11,9 +11,9 @@
    */
   function _toYear (year) {
     if (!year) {
-      year = new Date().getYear()
+      year = new Date().getFullYear()
     } else if (year instanceof Date) {
-      year = year.getYear() + 1900
+      year = year.getFullYear()
     }
     return year
   }
