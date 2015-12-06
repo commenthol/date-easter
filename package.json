@@ -1,6 +1,6 @@
 {
   "name": "date-easter",
-  "version": "0.2.1-0",
+  "version": "0.2.1",
   "description": "Calculates Easter for a given year",
   "main": "index.js",
   "directories": {
@@ -20,6 +20,5 @@
   ],
   "author": "commenthol",
   "license": "MIT",
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
