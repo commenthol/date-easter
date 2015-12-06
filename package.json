@@ -7,7 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha test/*.js"
+    "test": "mocha test/*.js",
+    "lint": "eslint **.js",
+    "cover": "istanbul cover _mocha --report lcov --report text -- -R dot --check-leaks test/*.mocha.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +19,7 @@
     "easter"
   ],
   "author": "commenthol",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+  }
 }

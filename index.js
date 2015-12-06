@@ -1,10 +1,23 @@
 /* global define */
 
-;(function (ctx) {
+// UMD Wrapper
+;(function (root, factory) {
+  'use strict'
+  /* istanbul ignore next */
+  if (typeof exports === 'object') {
+    // CommonJS
+    module.exports = factory()
+  } else if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(factory)
+  } else {
+    // Browser globals
+    root.dateEaster = factory()
+  }
+})(this, function () {
   'use strict'
 
   var exports = {} // define the module
-  var moduleName = 'date-easter' // the name of the module
 
   /**
    * @private
@@ -19,18 +32,18 @@
   }
 
   function EasterDate (year, month, day) {
-    this.year  = year
+    this.year = year
     this.month = month
-    this.day   = day
+    this.day = day
   }
-  
+
   EasterDate.prototype = {
     toString: function () {
       function pre (num, l) {
         l = l || 2
         var s = '0000' + num
         return s.substr(s.length - l, l)
-      } 
+      }
       return [pre(this.year, 4), pre(this.month), pre(this.day)].join('-')
     }
   }
@@ -56,7 +69,7 @@
     var sz = 7 - Math.floor(year + year / 4 + s) % 7
     var oe = 7 - (og - sz) % 7
     var os = og + oe
-    if (gregorian) {      
+    if (gregorian) {
       os = os + Math.floor(year / 100) - Math.floor(year / 400) - 2
     }
     //                      1   2   3   4   5   6   7   8
@@ -69,7 +82,7 @@
       }
       day -= daysPerMonth[month]
     }
-    
+
     return new EasterDate(year, month, day)
   }
 
@@ -108,14 +121,5 @@
   }
   exports.orthodoxEaster = orthodoxEaster
 
-  // Node.js
-  if (typeof ctx.Window === 'undefined' && typeof module !== 'undefined' && module.exports) {
-    module.exports = exports
-  } else if (typeof define !== 'undefined' && define.amd) {   // AMD / RequireJS
-    define([], function () {
-      return exports
-    })
-  } else if (typeof ctx.Window !== 'undefined' && !ctx[moduleName]) { // included in browser via <script> tag
-    ctx[moduleName] = exports
-  }
-}(this))
+  return exports
+})

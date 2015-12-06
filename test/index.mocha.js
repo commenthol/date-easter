@@ -2762,6 +2762,20 @@ describe('#easter', function () {
     })
   })
 
+  it('can calculate gregorian easter for per given full year', function () {
+    data.gregorian.forEach(function (d) {
+      var res = easter.easter(new Date(d))
+      assert.equal(res.toString(), d)
+    })
+  })
+  
+  it('can calculate gregorian easter for per current full year', function () {
+    var y = (new Date()).getFullYear()
+    var exp = easter.easter(y)
+    var res = easter.easter()
+    assert.deepEqual(res, exp)
+  })
+
   it('can calculate julian easter per given year in julian calendar', function () {
     data.julian.forEach(function (d) {
       var s = split(d)
