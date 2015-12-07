@@ -27,6 +27,8 @@
       year = new Date().getFullYear()
     } else if (year instanceof Date) {
       year = year.getFullYear()
+    } else if (typeof year === 'string') {
+      year = parseInt(year, 10)
     }
     return year
   }

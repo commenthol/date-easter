@@ -2792,6 +2792,11 @@ describe('#easter', function () {
     })
   })
   
+  it('can calculate easter per given year from string', function () {
+    var res = easter.easter('2015')
+    assert.deepEqual(res, { year: 2015, month: 4, day: 5 })
+  })
+  
   it.skip('devel', function () {
     console.log(easter.easter(2016))
     console.log(easter.gregorianEaster(new Date('2016-01-01')))
