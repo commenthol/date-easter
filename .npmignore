@@ -4,6 +4,7 @@
 /coverage
 /build
 /tmp
+/test
 /src
 *.tgz
 *.sh
