@@ -1,6 +1,6 @@
 {
   "name": "date-easter",
-  "version": "0.1.0",
+  "version": "0.2.3",
   "description": "Calculates Easter for a given year",
   "repo": "commenthol/date-easter",
   "keywords": [
