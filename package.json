@@ -1,6 +1,6 @@
 {
   "name": "date-easter",
-  "version": "0.2.4-0",
+  "version": "0.2.4",
   "description": "Calculates Easter for a given year",
   "keywords": [
     "easter"
