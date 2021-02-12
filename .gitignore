@@ -1,6 +1,6 @@
-/node_modules
-/coverage
-/attic
-/tmp
+node_modules/
+coverage/
+tmp/
+lib/
 *.log
 *.tgz

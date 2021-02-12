@@ -22,11 +22,11 @@ declare module "date-easter" {
     /**
      * Computes the gregorian easter date for the given year.
      * This is an alias / convenience method for gregorianEaster(year).
-     * 
-     * @param year the year for which the easter day should be computed 
+     *
+     * @param year the year for which the easter day should be computed
      */
-    export function easter(year: number): EasterDate;
-    export function gregorianEaster(year: number): EasterDate;
-    export function julianEaster(year: number): EasterDate;
-    export function orthodoxEaster(year: number): EasterDate;
+    export function easter(year?: Date|number): EasterDate;
+    export function gregorianEaster(year?: Date|number): EasterDate;
+    export function julianEaster(year?: Date|number): EasterDate;
+    export function orthodoxEaster(year?: Date|number): EasterDate;
 }
