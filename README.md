@@ -5,14 +5,18 @@
 ## Synopsis
 
 ````js
-var easter = require('date-easter')
-easter.easter(2016)
+// ES5
+import {easter, gregorianEaster, julianEaster, orthodoxEaster} from 'date-easter'
+// cjs
+const {easter, gregorianEaster, julianEaster, orthodoxEaster} = require('date-easter')
+
+easter(2016)
 // { year: 2016, month: 3, day: 27 }
-easter.gregorianEaster(new Date('2016-01-01'))
+gregorianEaster(new Date('2016-01-01'))
 // { year: 2016, month: 3, day: 27 }
-easter.julianEaster(2016)
+julianEaster(2016)
 // { year: 2016, month: 4, day: 18 }
-easter.orthodoxEaster(2016)
+orthodoxEaster(2016)
 // { year: 2016, month: 5, day: 1 }
 ````
 

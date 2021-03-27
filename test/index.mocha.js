@@ -1,12 +1,8 @@
-'use strict'
-
-/* global describe, it */
-
-var assert = require('assert')
-var easter = require('..')
+import assert from 'assert'
+import { easter, gregorianEaster, julianEaster, orthodoxEaster } from '../src/index.js'
 
 // test data
-var data = {}
+const data = {}
 
 data.gregorian = [
   '1000-03-30',
@@ -2742,7 +2738,7 @@ function toNumber (str) {
 }
 
 function split (str) {
-  var a = str.split('-')
+  const a = str.split('-')
   return {
     year: toNumber(a[0]),
     month: toNumber(a[1]),
@@ -2751,57 +2747,55 @@ function split (str) {
   }
 }
 
-// ~ console.log(easter.julianEaster(2016))
-
 describe('#easter', function () {
   it('can calculate gregorian easter per given year', function () {
     data.gregorian.forEach(function (d) {
-      var s = split(d)
-      var res = easter.easter(s.year)
+      const s = split(d)
+      const res = easter(s.year)
       assert.strictEqual(res.toString(), d)
     })
   })
 
   it('can calculate gregorian easter for per given full year', function () {
     data.gregorian.forEach(function (d) {
-      var res = easter.easter(new Date(d))
+      const res = easter(new Date(d))
       assert.strictEqual(res.toString(), d)
     })
   })
 
   it('can calculate gregorian easter for per current full year', function () {
-    var y = (new Date()).getFullYear()
-    var exp = easter.easter(y)
-    var res = easter.easter()
+    const y = (new Date()).getFullYear()
+    const exp = easter(y)
+    const res = easter()
     assert.deepStrictEqual(res, exp)
   })
 
   it('can calculate julian easter per given year in julian calendar', function () {
     data.julian.forEach(function (d) {
-      var s = split(d)
-      var res = easter.julianEaster(s.year)
+      const s = split(d)
+      const res = julianEaster(s.year)
       assert.strictEqual(res.toString(), d)
     })
   })
 
   it('can calculate orthodox easter per given year in gregorian calendar', function () {
     data.orthodox.forEach(function (d) {
-      var s = split(d)
-      var res = easter.orthodoxEaster(s.year)
+      const s = split(d)
+      const res = orthodoxEaster(s.year)
       assert.strictEqual(res.toString(), d)
     })
   })
 
   it('can calculate easter per given year from string', function () {
-    var res = easter.easter('2015')
+    const res = easter('2015')
     const _res = JSON.parse(JSON.stringify(res))
     assert.deepStrictEqual(_res, { year: 2015, month: 4, day: 5 })
   })
 
   it.skip('devel', function () {
-    console.log(easter.easter(2016))
-    console.log(easter.gregorianEaster(new Date('2016-01-01')))
-    console.log(easter.julianEaster(2016))
-    console.log(easter.orthodoxEaster(2016))
+    console.log(easter(2016))
+    console.log(gregorianEaster(new Date('2016-01-01')))
+    console.log(julianEaster(2016))
+    console.log(orthodoxEaster(2016))
   })
 })
