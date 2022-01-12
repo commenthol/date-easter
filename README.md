@@ -1,5 +1,8 @@
 # date-easter
 
+[![NPM version](https://badge.fury.io/js/date-easter.svg)](https://www.npmjs.com/package/date-easter/)
+[![Build Status](https://github.com/commenthol/date-easter/workflows/CI/badge.svg?branch=master&event=push)](https://github.com/commenthol/date-easter/actions/workflows/ci.yml?query=branch%3Amaster)
+
 > Calculates Easter for a given year
 
 ## Synopsis
