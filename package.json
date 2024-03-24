@@ -34,6 +34,11 @@
     "lib": "lib",
     "test": "test"
   },
+  "files": [
+    "src",
+    "lib",
+    "types/*.d.ts"
+  ],
   "scripts": {
     "all": "npm-run-all clean lint build test",
     "build": "rollup -c",
