@@ -45,9 +45,8 @@
     "lint": "eslint --ext .js .",
     "prepublishOnly": "npm run all",
     "readme": "markedpp --githubid -i README.md -o README.md",
-    "test": "npm-run-all test:ci test:ts",
-    "test:ci": "mocha",
-    "test:ts": "dtslint types"
+    "test": "npm-run-all test:ci",
+    "test:ci": "mocha"
   },
   "mocha": {
     "checkLeaks": true,
@@ -55,7 +54,6 @@
   },
   "devDependencies": {
     "c8": "^7.11.3",
-    "dtslint": "^4.2.1",
     "eslint": "^8.16.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
