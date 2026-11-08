@@ -1,5 +1,10 @@
 import assert from 'assert'
-import { easter, gregorianEaster, julianEaster, orthodoxEaster } from '../src/index.js'
+import {
+  easter,
+  gregorianEaster,
+  julianEaster,
+  orthodoxEaster
+} from '../src/index.js'
 
 // test data
 const data = {}
@@ -2733,11 +2738,11 @@ data.orthodox = [
   '2100-05-02'
 ]
 
-function toNumber (str) {
+function toNumber(str) {
   return parseInt(str, 10)
 }
 
-function split (str) {
+function split(str) {
   const a = str.split('-')
   return {
     year: toNumber(a[0]),
@@ -2764,7 +2769,7 @@ describe('#easter', function () {
   })
 
   it('can calculate gregorian easter for per current full year', function () {
-    const y = (new Date()).getFullYear()
+    const y = new Date().getFullYear()
     const exp = easter(y)
     const res = easter()
     assert.deepStrictEqual(res, exp)
