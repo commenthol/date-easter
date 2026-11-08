@@ -1,7 +1,7 @@
 /**
  * @private
  */
-function _toYear (year) {
+function _toYear(year) {
   if (!year) {
     year = new Date().getFullYear()
   } else if (year instanceof Date) {
@@ -12,20 +12,25 @@ function _toYear (year) {
   return year
 }
 
-function pre (num, l) {
+function pre(num, l) {
   l = l || 2
   const s = '0000' + num
   return s.substr(s.length - l, l)
 }
 
 export class EasterDate {
-  constructor (year, month, day) {
+  /**
+   * @param {number} year
+   * @param {number} month
+   * @param {number} day
+   */
+  constructor(year, month, day) {
     this.year = year
     this.month = month
     this.day = day
   }
 
-  toString () {
+  toString() {
     return [pre(this.year, 4), pre(this.month), pre(this.day)].join('-')
   }
 }
@@ -34,7 +39,7 @@ export class EasterDate {
  * from https://de.wikipedia.org/wiki/Gau%C3%9Fsche_Osterformel
  * ergänzte Formel
  */
-function _easter (year, julian, gregorian) {
+function _easter(year, julian, gregorian) {
   year = _toYear(year)
 
   const k = Math.floor(year / 100)
@@ -48,8 +53,8 @@ function _easter (year, julian, gregorian) {
   const d = (19 * a + m) % 30
   const r = Math.floor((d + a / 11) / 29)
   const og = 21 + d - r
-  const sz = 7 - Math.floor(year + year / 4 + s) % 7
-  const oe = 7 - (og - sz) % 7
+  const sz = 7 - (Math.floor(year + year / 4 + s) % 7)
+  const oe = 7 - ((og - sz) % 7)
   let os = og + oe
   if (gregorian) {
     os = os + Math.floor(year / 100) - Math.floor(year / 400) - 2
@@ -70,36 +75,36 @@ function _easter (year, julian, gregorian) {
 
 /**
  * Calculate easter sunday in the gregorian calendar
- * @param {Date|Number} year
+ * @param {Date|number|string} [year]
  * @return {EasterDate}
  */
-export function gregorianEaster (year) {
+export function gregorianEaster(year) {
   return _easter(year)
 }
 
 /**
  * Calculate easter sunday in the gregorian calendar (Shortcut for
  * `gregorianEaster`)
- * @param {Date|Number} year
+ * @param {Date|number|string} [year]
  * @return {EasterDate}
  */
 export const easter = gregorianEaster
 
 /**
  * Calculate easter sunday in the julian calendar
- * @param {Date|Number} year
+ * @param {Date|number|string} [year]
  * @return {EasterDate}
  */
-export function julianEaster (year) {
+export function julianEaster(year) {
   return _easter(year, true)
 }
 
 /**
  * Orthodox Easter in gregorian calender
- * @param {Date|Number} year
+ * @param {Date|number|string} [year]
  * @return {EasterDate}
  */
-export function orthodoxEaster (year) {
+export function orthodoxEaster(year) {
   return _easter(year, true, true)
 }
 

@@ -1,32 +1,44 @@
-declare module "date-easter" {
+export declare class EasterDate {
+    year: number;
+    month: number;
+    day: number;
     /**
-     * The easter date for a particular year.
+     * @param {number} year
+     * @param {number} month
+     * @param {number} day
      */
-    export class EasterDate {
-        /**
-         * The year which was queried.
-         */
-        readonly year: number;
-
-        /**
-         * The month. 1-12 - NOT ZERO BASED!
-         */
-        readonly month: number;
-
-        /**
-         * The day. 1-31
-         */
-        readonly day: number;
-    }
-
-    /**
-     * Computes the gregorian easter date for the given year.
-     * This is an alias / convenience method for gregorianEaster(year).
-     *
-     * @param year the year for which the easter day should be computed
-     */
-    export function easter(year?: Date|number): EasterDate;
-    export function gregorianEaster(year?: Date|number): EasterDate;
-    export function julianEaster(year?: Date|number): EasterDate;
-    export function orthodoxEaster(year?: Date|number): EasterDate;
+    constructor(year: number, month: number, day: number);
+    toString(): string;
 }
+/**
+ * Calculate easter sunday in the gregorian calendar
+ * @param {Date|number|string} [year]
+ * @return {EasterDate}
+ */
+export declare function gregorianEaster(year?: Date | number | string): EasterDate;
+/**
+ * Calculate easter sunday in the gregorian calendar (Shortcut for
+ * `gregorianEaster`)
+ * @param {Date|number|string} [year]
+ * @return {EasterDate}
+ */
+export declare const easter: typeof gregorianEaster;
+/**
+ * Calculate easter sunday in the julian calendar
+ * @param {Date|number|string} [year]
+ * @return {EasterDate}
+ */
+export declare function julianEaster(year?: Date | number | string): EasterDate;
+/**
+ * Orthodox Easter in gregorian calender
+ * @param {Date|number|string} [year]
+ * @return {EasterDate}
+ */
+export declare function orthodoxEaster(year?: Date | number | string): EasterDate;
+declare const _default: {
+    easter: typeof gregorianEaster;
+    gregorianEaster: typeof gregorianEaster;
+    julianEaster: typeof julianEaster;
+    orthodoxEaster: typeof orthodoxEaster;
+};
+export default _default;
